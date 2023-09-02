@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Application2 {
+public class Application3 {
     public static void connection(String url){
         try {
             if(!check(url)) {
@@ -37,7 +37,9 @@ public class Application2 {
 
             for (Map.Entry<String,String> p: params.entrySet()){
                 if (p.getKey().equals("autoDeserialize")) {
-                    if(p.getValue().equals("true")){
+                    String value = p.getValue();
+                    value = value.toLowerCase();
+                    if(value.equals("true")){
                         return false;
                     }
                 }

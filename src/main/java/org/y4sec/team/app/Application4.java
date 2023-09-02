@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Application2 {
-    public static void connection(String url){
+public class Application4 {
+    public static void connection(String url) {
         try {
-            if(!check(url)) {
+            if (!check(url)) {
                 System.out.println("you are hacker");
                 return;
             }
@@ -19,7 +19,7 @@ public class Application2 {
         }
     }
 
-    private static boolean check(String jdbcUrl){
+    private static boolean check(String jdbcUrl) {
         try {
             Map<String, String> params = new HashMap<>();
             String query = jdbcUrl.split("\\?")[1];
@@ -35,9 +35,11 @@ public class Application2 {
 
             System.out.println("Params: " + params);
 
-            for (Map.Entry<String,String> p: params.entrySet()){
+            for (Map.Entry<String, String> p : params.entrySet()) {
                 if (p.getKey().equals("autoDeserialize")) {
-                    if(p.getValue().equals("true")){
+                    String value = p.getValue();
+                    value = value.toLowerCase();
+                    if (value.equals("true") || value.equals("yes")) {
                         return false;
                     }
                 }
