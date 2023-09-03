@@ -2,7 +2,9 @@
 
 这里是很多`MySQL JDBC Attack`的小技巧，我仅在`MySQL`的`JDBC`驱动中测试，这里的技巧可能在其他类型的数据库驱动中也存在
 
-推荐搭建：https://github.com/4ra1n/mysql-fake-server 使用
+文章：https://mp.weixin.qq.com/s/lmoWKK41ZQzZOh-P26VUng
+
+推荐搭建：推荐配合 https://github.com/4ra1n/mysql-fake-server 使用
 
 ### 基本示例
 
